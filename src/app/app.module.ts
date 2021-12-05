@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// HttpModule
+import { HttpClientModule } from '@angular/common/http';
+
+// Form Module
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrontendLayoutComponent } from './layouts/frontend-layout/frontend-layout.component';
@@ -47,6 +53,9 @@ import { SidebarBackendComponent } from './shared/backend/sidebar-backend/sideba
     SidebarBackendComponent
   ],
   imports: [
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],
