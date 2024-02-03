@@ -1,9 +1,9 @@
 <div class="container-fluid" style="margin-top:100px">
     <p class="text-center my-5"><a routerLink="" class="text-secondary text-decoration-none"><i class="fas fa-arrow-left"></i> &nbsp;กลับหน้าหลัก</a></p>
     <div class="rounded d-flex justify-content-center">
-        <div class="col-sm-12 col-md-6 col-lg-3 shadow-lg p-5 bg-light">
+        <div class="col-sm-12 col-md-6 col-lg-3 shadow-lg p-5">
             <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
-                <div class="py-4">
+                <div class="pt-4">
                     <div class="input-group mb-3">
                         <span class="input-group-text bg-primary">
                             <i class="far fa-user text-light"></i>
@@ -15,12 +15,12 @@
                         id="username" 
                         formControlName="username"
                         placeholder="Username">
+                        <div *ngIf="submitted &&  loginForm.controls.username.errors" class="invalid-feedback">
+                            <div *ngIf="loginForm.controls.username.errors.required">ป้อน Username ก่อน</div>
+                            <div *ngIf="loginForm.controls.username.errors.minlength">อย่างน้อย 3 ตัวอักษร</div>
+                        </div>
                     </div>
                     
-                    <div *ngIf="submitted &&  loginForm.controls.username.errors">
-                        <div *ngIf="loginForm.controls.username.errors.required">Username is required</div>
-                        <div *ngIf="loginForm.controls.username.errors.minlength">Minimum is 3 charactor</div>
-                    </div>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text bg-primary">
@@ -33,12 +33,14 @@
                         id="password" 
                         formControlName="password"
                         placeholder="Password">
+                        
+                        <div *ngIf="submitted &&  loginForm.controls.password.errors" class="invalid-feedback">
+                            <div *ngIf="loginForm.controls.password.errors.required">ป้อนรหัสผ่านก่อน</div>
+                            <div *ngIf="loginForm.controls.password.errors.minlength">อย่างน้อย 6 ตัวอักษร</div>
+                        </div>
                     </div>
 
-                    <div *ngIf="submitted &&  loginForm.controls.password.errors">
-                        <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
-                        <div *ngIf="loginForm.controls.password.errors.minlength">Minimum is 6 charactor</div>
-                    </div>
+                    
 
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">

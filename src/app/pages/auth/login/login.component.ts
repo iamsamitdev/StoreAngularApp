@@ -42,18 +42,19 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.userData.username = this.loginForm.value.username
       this.userData.password = this.loginForm.value.password
-      // console.log(this.userData)
+      console.log(this.userData)
 
       // เรียกใช้งาน API
       this.http.LogIn(this.userData).subscribe((data: {}) => {
 
         // console.log(data);
         if(data != ""){
+          alert("Login Success")
           this.msgStatus = "<p class='alert alert-success text-center'>Login Success</p>"
           // Redirect ไปหน้า backend
           this.route.navigate(['backend'])
         }else{
-          // alert("Login Fail!!")
+          alert("Login Fail!!")
           this.msgStatus = "<p class='alert alert-danger text-center'>Login Fail!!</p>"
         }
 

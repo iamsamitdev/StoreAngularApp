@@ -1,11 +1,11 @@
 html, body {
     margin: 0; 
-    height: 100%; 
+    // height: 100%; 
     font-family: 'Noto Sans Thai', Poppins, sans-serif; 
 }
 
 section.footer {
-    background-color: #f8f9fa !important;
+    background-color: #cfd8dc !important;
 }
 
 .carousel-item img {
@@ -19,6 +19,15 @@ section.footer {
 .navbar-light .navbar-nav .nav-link.active{
     color: brown;
     font-weight: bold;
+}
+
+.navbar-light .navbar-toggler{
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
 }
 
 .card {
@@ -42,5 +51,11 @@ section.footer {
     .carousel-item img {
         width: auto !important;
         height: 450px;
+    }
+    .navbar-light .navbar-nav .nav-link{
+        text-align: center;
+    }
+    .bg-light{
+        background-color: #cfd8dc !important;
     }
 }
